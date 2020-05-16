@@ -3,5 +3,10 @@
   "infoCommand": "!d-zone",
   "autoPopulate": true,
   "servers": [
+    {
+      "id": "635056787040632844",
+      "default": true,
+      "ignoreChannels": ["gówno"]
+    }
   ]
 }
