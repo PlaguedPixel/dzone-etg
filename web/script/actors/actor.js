@@ -129,7 +129,6 @@ Actor.prototype.updateSprite = function() {
     }
     if(this.talking) this.messageBox.updateScreen();
     this.sprite.metrics = metrics;
-    if (this.roleColor) { console.log('Role Colour:', this.roleColor);} else {console.log('Null role colour');}
     this.sprite.image = this.roleColor ? [this.roleColor,'actors'] : 'actors';
 };
 
