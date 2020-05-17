@@ -129,6 +129,7 @@ Actor.prototype.updateSprite = function() {
     }
     if(this.talking) this.messageBox.updateScreen();
     this.sprite.metrics = metrics;
+    print(this.roleColor);
     this.sprite.image = this.roleColor ? [this.roleColor,'actors'] : 'actors';
 };
 
