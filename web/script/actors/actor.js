@@ -132,9 +132,9 @@ Actor.prototype.updateSprite = function() {
     //this.sprite.image = this.roleColor ? ['#FF0000','cubulon'] : 'cubulon';
     if (this.roleColor.toLowerCase() == '#1abc9c') {
         this.sprite.image = 'poisbulon'
-    } else {
-        this.sprite.image = 'cubulon';
-    }
+    }// else {
+    //    this.sprite.image = 'cubulon'
+    //}
 };
 
 Actor.prototype.tryMove = function(x,y) {
