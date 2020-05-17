@@ -25,7 +25,7 @@ function Actor(options) {
     this.nametag = new TextBox(this, this.username);
     this.nametag.blotText();
     this.sheet = new Sheet('actor');
-    this.sprite.image = 'actors';
+    this.sprite.image = 'cubulon';
     this.presence = 'offline';
     this.talking = false;
     this.destination = false;
@@ -60,7 +60,7 @@ Actor.prototype.onUpdate = function() {
 Actor.prototype.addToGame = function(game) {
     WorldObject.prototype.addToGame.call(this, game);
     if(this.roleColor) this.game.renderer.addColorSheet({
-        sheet: 'actors', color: this.roleColor, alpha: 0.8,
+        sheet: 'cubulon', color: this.roleColor, alpha: 0.8,
         regions: [{ alpha: 0.4, x: 70, y: 0, w: 28, h: 14 }] // Less colorizing for offline sprites
     });
     this.nametag.addToGame(game);
@@ -129,10 +129,7 @@ Actor.prototype.updateSprite = function() {
     }
     if(this.talking) this.messageBox.updateScreen();
     this.sprite.metrics = metrics;
-    this.sprite.image = this.roleColor ? [this.roleColor,'actors'] : 'actors';
-    console.log('test1');
-    console.log(this.sprite.image);
-    console.log('test2');
+    this.sprite.image = this.roleColor ? [this.roleColor,'cubulon'] : 'cubulon';
 };
 
 Actor.prototype.tryMove = function(x,y) {
