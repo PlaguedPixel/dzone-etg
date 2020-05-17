@@ -130,11 +130,13 @@ Actor.prototype.updateSprite = function() {
     if(this.talking) this.messageBox.updateScreen();
     this.sprite.metrics = metrics;
     //this.sprite.image = this.roleColor ? ['#FF0000','cubulon'] : 'cubulon';
-    if (this.roleColor.toLowerCase() == '#1abc9c') {
-        this.sprite.image = 'poisbulon'
-    }
-    if (this.roleColor.toLowerCase() == "92a06a") {
-        this.sprite.image = 'leadbulon'
+    if (this.roleColor != null) {
+        if (this.roleColor.toLowerCase() == '#1abc9c') {
+            this.sprite.image = 'poisbulon'
+        }
+        if (this.roleColor.toLowerCase() == "#92a06a") {
+            this.sprite.image = 'leadbulon'
+        }
     }
 };
 
