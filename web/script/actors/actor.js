@@ -130,7 +130,9 @@ Actor.prototype.updateSprite = function() {
     if(this.talking) this.messageBox.updateScreen();
     this.sprite.metrics = metrics;
     this.sprite.image = this.roleColor ? [this.roleColor,'actors'] : 'actors';
+    console.log('test1');
     console.log(this.sprite.image);
+    console.log('test2');
 };
 
 Actor.prototype.tryMove = function(x,y) {
