@@ -129,7 +129,7 @@ Actor.prototype.updateSprite = function() {
     }
     if(this.talking) this.messageBox.updateScreen();
     this.sprite.metrics = metrics;
-    this.sprite.image = this.roleColor ? [this.roleColor,'actors'] : 'actors';
+    this.sprite.image = this.roleColor ? [this.roleColor,'actors'] : 'cubulon';
 };
 
 Actor.prototype.tryMove = function(x,y) {
