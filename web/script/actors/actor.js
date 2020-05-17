@@ -130,15 +130,18 @@ Actor.prototype.updateSprite = function() {
     if(this.talking) this.messageBox.updateScreen();
     this.sprite.metrics = metrics;
     //this.sprite.image = this.roleColor ? ['#FF0000','cubulon'] : 'cubulon';
-    if (this.roleColor != null) {
-        if (this.roleColor.toLowerCase() == '#1abc9c') {
-            this.sprite.image = 'poisbulon'
-        }
-        if (this.roleColor.toLowerCase() == "#92a06a") {
-            this.sprite.image = 'leadbulon'
-        }
-    }
+    this.sprite.image = this.roleColor ? this.determineSpritesheet(this.roleColor.substring(1)) : 'cubulon';
 };
+
+Actor.prototype.determineSpritesheet = function(color) {
+    var red = parseInt(Number("0x"+color.substring(0,2)), 10);
+    var blue = parseInt(Number("0x"+color.substring(2,4)), 10);
+    var green = parseInt(Number("0x"+color.substring(4,6)), 10);
+    if(red > 10) return 'leadbulon';
+    else if (green > 10) return 'poisbulon';
+    else if (blue > 10) return 'icebulon';
+    else return 'poopbulon';
+}
 
 Actor.prototype.tryMove = function(x,y) {
     if(x == 0 && y == 0) return;
