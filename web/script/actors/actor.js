@@ -137,7 +137,7 @@ Actor.prototype.determineSpritesheet = function(color) {
     var red = parseInt(Number("0x"+color.substring(0,2)), 10);
     var blue = parseInt(Number("0x"+color.substring(2,4)), 10);
     var green = parseInt(Number("0x"+color.substring(4,6)), 10);
-    if(red > 10) return 'leadbulon';
+    if(red > 10) return 'bloodbulon';
     else if (green > 10) return 'poisbulon';
     else if (blue > 10) return 'icebulon';
     else return 'poopbulon';
