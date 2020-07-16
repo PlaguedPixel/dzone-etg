@@ -172,11 +172,11 @@ World.prototype.crawlMap = function() {
             }
             safety++;
         } while(safety < 2000 && (grid.style != 'grass' || !valid));
-        if(safety == 1000) continue;
+        if(safety == 2000) continue;
         grid.style = 'flowers';
-        var spread = util.randomIntRange(1,2);
+        var spread = util.randomIntRange(1,4);
         for(var s = 0; s < spread; s++) {
-            var canSpread = true;
+            var canSpread = false;
             var spreadX = grid.position.x+util.randomIntRange(-1,1), 
                 spreadY = grid.position.y+util.randomIntRange(-1,1);
             var spreadGrid = this.map[spreadX+':'+spreadY];
