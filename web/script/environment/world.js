@@ -157,7 +157,7 @@ World.prototype.crawlMap = function() {
     this.map['0:-1'].style = 'plain';
     
     // Create flower patches
-    for(var fp = 0; fp < Math.ceil(Math.pow(this.worldRadius,2) / 80); fp++) {
+    for(var fp = 0; fp < Math.ceil(Math.pow(this.worldRadius,2) / 40); fp++) {
         var safety = 0;
         do {
             var valid = true;
@@ -171,8 +171,8 @@ World.prototype.crawlMap = function() {
                 }
             }
             safety++;
-        } while(safety < 2000 && (grid.style != 'grass' || !valid));
-        if(safety == 2000) continue;
+        } while(safety < 6000 && (grid.style != 'grass' || !valid));
+        if(safety == 6000) continue;
         grid.style = 'flowers';
         var spread = util.randomIntRange(1,4);
         for(var s = 0; s < spread; s++) {
