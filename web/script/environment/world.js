@@ -166,13 +166,13 @@ World.prototype.crawlMap = function() {
             for(var fKey in flowerNeighbors) { if (!flowerNeighbors.hasOwnProperty(fKey)) continue;
                 var fNeighbor = this.map[flowerNeighbors[fKey]];
                 if(!fNeighbor || fNeighbor.style != 'grass') {
-                    valid = false;
+                    //valid = false;
                     break;
                 }
             }
             safety++;
-        } while(safety < 6000 && (grid.style != 'grass' || !valid));
-        if(safety == 6000) continue;
+        } while(safety < 1000 && (grid.style != 'grass' || !valid));
+        if(safety == 1000) continue;
         grid.style = 'flowers';
         var spread = util.randomIntRange(1,4);
         for(var s = 0; s < spread; s++) {
