@@ -173,7 +173,7 @@ World.prototype.crawlMap = function() {
             safety++;
         } while(safety < 1000 && (grid.style != 'grass' || !valid));
         if(safety == 1000) continue;
-        grid.style = 'plain';
+        grid.style = 'flowers';
         var spread = util.randomIntRange(1,4);
         for(var s = 0; s < spread; s++) {   
             var canSpread = true;
