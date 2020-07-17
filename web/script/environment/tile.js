@@ -36,7 +36,7 @@ function Tile(options) {
     }
     if(this.tileCode.includes('F')) {
         var variation = util.randomIntRange(0,14);
-    //    this.sprite.metrics.x = ((variation + 1) % 3) * this.sprite.metrics.w;
-    //    this.sprite.metrics.y = 126 + (Math.floor(variation / 3) * this.sprite.metrics.h);
+        this.sprite.metrics.x = ((variation + 1) % 3) * this.sprite.metrics.w;
+        this.sprite.metrics.y = 126 + (Math.floor(variation / 3) * this.sprite.metrics.h);
     }
 }
