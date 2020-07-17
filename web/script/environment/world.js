@@ -219,6 +219,11 @@ World.prototype.createTiles = function() {
             +'-'+getTileCode(oGrid,nGrids[2])+'-'+getTileCode(oGrid,nGrids[3]);
         //var tileSpriteCode = ["F","G"][Math.floor(Math.random()*2)]+"-"+["F","G"][Math.floor(Math.random()*2)]+"-"+["F","G"][Math.floor(Math.random()*2)]+"-"+["F","G"][Math.floor(Math.random()*2)];
         //if (!tileSpriteCode.contains("F")) tileSpriteCode = "F-G-G-G";
+        if(tileCode.includes('F')) {
+            var random = Math.random();
+            if(random < 0.75) this.tileCode = 'G-G-G-G';
+        }
+        
         var tileSprite = (new TileSheet('tile')).map[tileCode];
         if(!tileSprite) console.error('unknown tile code',tileCode,nGrids);
         return {
