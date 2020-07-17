@@ -26,6 +26,13 @@ function Tile(options) {
         },
         image: this.imageName, position: this.position, screen: this.screen
     };
+    if(this.tileCode.includes('F')) {
+        var variation = util.randomIntRange(0,14);
+        this.sprite.metrics.x = ((variation + 1) % 3) * this.sprite.metrics.w;
+        this.sprite.metrics.y = 126 + (Math.floor(variation / 3) * this.sprite.metrics.h);
+        var random = Math.random();
+        if(random < 0.75) this.tileCode = 'G-G-G-G';
+    }
     if(this.tileCode == 'G-G-G-G') {
         var variation = util.randomIntRange(0,2);
         var random = Math.random();
@@ -33,10 +40,5 @@ function Tile(options) {
         else if(Math.random() > 0.95) variation = util.randomIntRange(5,7);
         else if(random > 0.6) variation = util.randomIntRange(3,4);
         this.sprite.metrics.x += variation * this.sprite.metrics.w;
-    }
-    if(this.tileCode.includes('F')) {
-        var variation = util.randomIntRange(0,14);
-        this.sprite.metrics.x = ((variation + 1) % 3) * this.sprite.metrics.w;
-        this.sprite.metrics.y = 126 + (Math.floor(variation / 3) * this.sprite.metrics.h);
     }
 }
