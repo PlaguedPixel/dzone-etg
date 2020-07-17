@@ -162,6 +162,7 @@ World.prototype.crawlMap = function() {
         do {
             var valid = true;
             var grid = this.map[util.pickInObject(this.map)];
+            console.log("Flower grid selected: " + String(grid));
             var flowerNeighbors = geometry.get8Neighbors(grid.grid);
             for(var fKey in flowerNeighbors) { if (!flowerNeighbors.hasOwnProperty(fKey)) continue;
                 var fNeighbor = this.map[flowerNeighbors[fKey]];
