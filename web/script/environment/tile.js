@@ -34,7 +34,7 @@ function Tile(options) {
         else if(random > 0.6) variation = util.randomIntRange(3,4);
         this.sprite.metrics.x += variation * this.sprite.metrics.w;
     }
-    if(this.tileCode.contains('F')) {
+    if(this.tileCode.includes('F')) {
         var variation = util.randomIntRange(0,14);
     //    this.sprite.metrics.x = ((variation + 1) % 3) * this.sprite.metrics.w;
     //    this.sprite.metrics.y = 126 + (Math.floor(variation / 3) * this.sprite.metrics.h);
