@@ -157,7 +157,7 @@ World.prototype.crawlMap = function() {
     this.map['0:-1'].style = 'plain';
     
     // Create flower patches
-    for(var fp = 0; fp < Math.ceil(Math.pow(this.worldRadius,2) / 10); fp++) {
+    for(var fp = 0; fp < Math.ceil(Math.pow(this.worldRadius,2) / 20); fp++) {
         var safety = 0;
         do {
             var valid = true;
