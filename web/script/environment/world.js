@@ -174,22 +174,22 @@ World.prototype.crawlMap = function() {
         } while(safety < 1000 && (grid.style != 'grass' || !valid));
         if(safety == 1000) continue;
         grid.style = 'flowers';
-        // var spread = util.randomIntRange(1,4);
-        // for(var s = 0; s < spread; s++) {
-        //     var canSpread = false;
-        //     var spreadX = grid.position.x+util.randomIntRange(-1,1), 
-        //         spreadY = grid.position.y+util.randomIntRange(-1,1);
-        //     var spreadGrid = this.map[spreadX+':'+spreadY];
-        //     var spreadNeighbors = geometry.get8Neighbors(spreadGrid.grid);
-        //     for(var sKey in spreadNeighbors) { if (!spreadNeighbors.hasOwnProperty(sKey)) continue;
-        //         var sNeighbor = this.map[spreadNeighbors[sKey]];
-        //         if(!sNeighbor || (sNeighbor.style != 'grass' && sNeighbor.style != 'flowers')) {
-        //             canSpread = false;
-        //             break;
-        //         }
-        //     }
-        //     if(canSpread) spreadGrid.style = 'flowers';
-        // }
+        var spread = util.randomIntRange(1,4);
+        for(var s = 0; s < spread; s++) {
+            var canSpread = true;
+            var spreadX = grid.position.x+util.randomIntRange(-1,1), 
+                spreadY = grid.position.y+util.randomIntRange(-1,1);
+            var spreadGrid = this.map[spreadX+':'+spreadY];
+            var spreadNeighbors = geometry.get8Neighbors(spreadGrid.grid);
+            for(var sKey in spreadNeighbors) { if (!spreadNeighbors.hasOwnProperty(sKey)) continue;
+                var sNeighbor = this.map[spreadNeighbors[sKey]];
+                if(!sNeighbor || (sNeighbor.style != 'grass' && sNeighbor.style != 'flowers')) {
+                    canSpread = false;
+                    break;
+                }
+            }
+            if(canSpread) spreadGrid.style = 'flowers';
+        }
     }
 };
 
