@@ -16,8 +16,6 @@ function Tile(options) {
     };
     this.imageName = 'static-tiles';
     this.sheet = new Sheet('tile');
-
-    this.convertedFlower = false;
     
     var spriteMap = this.sheet.map[this.tileCode];
     this.sprite = {
@@ -36,10 +34,9 @@ function Tile(options) {
         if(random < 0.75) {
             this.sprite.metrics.x = 0;
             this.sprite.metrics.y = 108;
-            this.convertedFlower = true;
         }
     }
-    if(this.tileCode == 'G-G-G-G' || convertedFlower) {
+    if(this.tileCode == 'G-G-G-G') {
         var variation = util.randomIntRange(0,2);
         var random = Math.random();
         if(Math.random() > 0.98) variation = 8;
