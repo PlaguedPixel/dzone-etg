@@ -215,12 +215,11 @@ World.prototype.createTiles = function() {
     
     function generateTile(oGrid, tile, grid, game) {
         var nGrids = tile.grids;
-        //var tileCode = getTileCode(oGrid,nGrids[0])+'-'+getTileCode(oGrid,nGrids[1])
-        //    +'-'+getTileCode(oGrid,nGrids[2])+'-'+getTileCode(oGrid,nGrids[3]);
-        //var tileCode = ["F","G"][Math.floor(Math.random()*2)]+"-"+["F","G"][Math.floor(Math.random()*2)]+"-"+["F","G"][Math.floor(Math.random()*2)]+"-"+["F","G"][Math.floor(Math.random()*2)];
-        //if (!tileCode.contains("F")) tileCode = "F-G-G-G";
-        var tileCode = "S-X-X-B";
-        var tileSprite = (new TileSheet('tile')).map[tileCode];
+        var tileCode = getTileCode(oGrid,nGrids[0])+'-'+getTileCode(oGrid,nGrids[1])
+            +'-'+getTileCode(oGrid,nGrids[2])+'-'+getTileCode(oGrid,nGrids[3]);
+        var tileSpriteCode = ["F","G"][Math.floor(Math.random()*2)]+"-"+["F","G"][Math.floor(Math.random()*2)]+"-"+["F","G"][Math.floor(Math.random()*2)]+"-"+["F","G"][Math.floor(Math.random()*2)];
+        if (!tileSpriteCode.contains("F")) tileSpriteCode = "F-G-G-G";
+        var tileSprite = (new TileSheet('tile')).map[tileSpriteCode];
         if(!tileSprite) console.error('unknown tile code',tileCode,nGrids);
         return {
             tileCode: tileCode, position: tile, grid: grid, game: game
