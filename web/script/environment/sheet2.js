@@ -19,7 +19,7 @@ var map = {
         'G-S-S-S': {x: 64, y: 54, w: 32, h: 18},
         'S-G-S-S': {x: 64, y: 72, w: 32, h: 18},
         
-        'F-F-F-F': {x: 64, y: 198, w: 32, h: 18}, // Grass/Flower
+        'F-F-F-F': {x: 0, y: 144, w: 32, h: 18}, // Grass/Flower
         'G-F-G-F': {x: 0, y: 198, w: 32, h: 18},
         'F-G-F-G': {x: 32, y: 198, w: 32, h: 18},
         'G-G-G-F': {x: 0, y: 126, w: 32, h: 18},

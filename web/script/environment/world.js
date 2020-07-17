@@ -218,9 +218,6 @@ World.prototype.createTiles = function() {
         var nGrids = tile.grids;
         var tileCode = getTileCode(oGrid,nGrids[0])+'-'+getTileCode(oGrid,nGrids[1])
             +'-'+getTileCode(oGrid,nGrids[2])+'-'+getTileCode(oGrid,nGrids[3]);
-        if (tileCode.contains('F')) {
-            tileCode = 'F-G-G-G';
-        }
         var tileSprite = (new TileSheet('tile')).map[tileCode];
         if(!tileSprite) console.error('unknown tile code',tileCode,nGrids);
         return {
