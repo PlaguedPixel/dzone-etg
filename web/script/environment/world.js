@@ -156,13 +156,13 @@ World.prototype.crawlMap = function() {
     this.map['0:1'].style = 'plain';
     this.map['0:-1'].style = 'plain';
     
+    // TODO: remove this code if none of the floors need it
     // Create flower patches
-    for(var fp = 0; fp < Math.ceil(Math.pow(this.worldRadius,2) / 40); fp++) {
+    /*for(var fp = 0; fp < Math.ceil(Math.pow(this.worldRadius,2) / 40); fp++) {
         var safety = 0;
         do {
             var valid = true;
             var grid = this.map[util.pickInObject(this.map)];
-            console.log("Flower grid selected: " + String(grid.style));
             var flowerNeighbors = geometry.get8Neighbors(grid.grid);
             for(var fKey in flowerNeighbors) { if (!flowerNeighbors.hasOwnProperty(fKey)) continue;
                 var fNeighbor = this.map[flowerNeighbors[fKey]];
@@ -191,7 +191,7 @@ World.prototype.crawlMap = function() {
             }
             if(canSpread) spreadGrid.style = 'flowers';
         }
-    }
+    }*/
 };
 
 World.prototype.createTiles = function() {
@@ -218,6 +218,9 @@ World.prototype.createTiles = function() {
         var nGrids = tile.grids;
         var tileCode = getTileCode(oGrid,nGrids[0])+'-'+getTileCode(oGrid,nGrids[1])
             +'-'+getTileCode(oGrid,nGrids[2])+'-'+getTileCode(oGrid,nGrids[3]);
+        if (tileCode.contains('F')) {
+            tileCode = 'F-G-G-G';
+        }
         var tileSprite = (new TileSheet('tile')).map[tileCode];
         if(!tileSprite) console.error('unknown tile code',tileCode,nGrids);
         return {
