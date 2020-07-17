@@ -31,7 +31,7 @@ function Tile(options) {
         this.sprite.metrics.x = ((variation + 1) % 3) * this.sprite.metrics.w;
         this.sprite.metrics.y = 126 + (Math.floor(variation / 3) * this.sprite.metrics.h);
         var random = Math.random();
-        if(random < 0.75) {
+        if(random < 0.55) {
             this.sprite.metrics.x = 0;
             this.sprite.metrics.y = 108;
         }
