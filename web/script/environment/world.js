@@ -156,9 +156,8 @@ World.prototype.crawlMap = function() {
     this.map['0:1'].style = 'plain';
     this.map['0:-1'].style = 'plain';
     
-    // TODO: remove this code if none of the floors need it
     // Create flower patches
-    /*for(var fp = 0; fp < Math.ceil(Math.pow(this.worldRadius,2) / 40); fp++) {
+    for(var fp = 0; fp < Math.ceil(Math.pow(this.worldRadius,2) / 40); fp++) {
         var safety = 0;
         do {
             var valid = true;
@@ -191,7 +190,7 @@ World.prototype.crawlMap = function() {
             }
             if(canSpread) spreadGrid.style = 'flowers';
         }
-    }*/
+    }
 };
 
 World.prototype.createTiles = function() {
