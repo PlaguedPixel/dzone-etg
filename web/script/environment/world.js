@@ -157,7 +157,7 @@ World.prototype.crawlMap = function() {
     this.map['0:-1'].style = 'plain';
     
     // Create flower patches
-    for(var fp = 0; fp < Math.ceil(Math.pow(this.worldRadius,2) / 30); fp++) {
+    for(var fp = 0; fp < Math.ceil(Math.pow(this.worldRadius,2) / 10); fp++) {
         var safety = 0;
         do {
             var valid = true;
@@ -176,7 +176,7 @@ World.prototype.crawlMap = function() {
         grid.style = 'flowers';
         var spread = util.randomIntRange(1,4);
         for(var s = 0; s < spread; s++) {   
-            var canSpread = true;
+            var canSpread = false;
             var spreadX = grid.position.x+util.randomIntRange(-1,1), 
                 spreadY = grid.position.y+util.randomIntRange(-1,1);
             var spreadGrid = this.map[spreadX+':'+spreadY];
