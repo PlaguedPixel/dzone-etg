@@ -26,7 +26,7 @@ function Tile(options) {
         },
         image: this.imageName, position: this.position, screen: this.screen
     };
-    if(this.tileCode == 'G-G-G-G' || this.tileCode.contains('F')) {
+    if(this.tileCode == 'G-G-G-G') {
         var variation = util.randomIntRange(0,2);
         var random = Math.random();
         if(Math.random() > 0.98) variation = 8;
