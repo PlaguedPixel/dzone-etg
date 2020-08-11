@@ -8,7 +8,7 @@ module.exports = Decorator;
 function Decorator(game, world) {
     this.game = game;
     this.world = world;
-    this.createBeacon();
+    this.createBeacon();//
 }
 
 Decorator.prototype.sewSeed = function(options) {
