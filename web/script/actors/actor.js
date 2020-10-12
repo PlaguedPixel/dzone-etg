@@ -59,10 +59,6 @@ Actor.prototype.onUpdate = function() {
 
 Actor.prototype.addToGame = function(game) {
     WorldObject.prototype.addToGame.call(this, game);
-    //if(this.roleColor) this.game.renderer.addColorSheet({
-    //    sheet: 'cubulon', color: '#FF0000', alpha: 0.8,
-    //    regions: [{ alpha: 0.4, x: 70, y: 0, w: 28, h: 14 }] // Less colorizing for offline sprites
-    //});
     this.nametag.addToGame(game);
     this.game.on('update', this.onUpdate.bind(this));
     this.game.users.on('message', this.boundOnMessage);
@@ -129,7 +125,6 @@ Actor.prototype.updateSprite = function() {
     }
     if(this.talking) this.messageBox.updateScreen();
     this.sprite.metrics = metrics;
-    //this.sprite.image = this.roleColor ? ['#FF0000','cubulon'] : 'cubulon';
     this.sprite.image = this.roleColor ? this.determineSpritesheet(this.roleColor.substring(1)) : 'cubulon';
 };
 

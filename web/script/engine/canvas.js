@@ -127,8 +127,6 @@ Canvas.prototype.draw = function() {
     if(this.game.servers) return;
     this.context.fillStyle = '#d4cfb6';
     this.context.image
-    //context.drawImage('poisbulon', 0, 0, canvas.width, canvas.height,
-    //    0, 0, canvas.width, canvas.height);
     this.context.font='14px Arial';
     this.context.textAlign = 'center';
     this.context.fillText('connecting...',Math.round(this.width/2),Math.round(this.height/2-4));
